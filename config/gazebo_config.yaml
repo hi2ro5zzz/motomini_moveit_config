@@ -1,0 +1,48 @@
+# Publish all joint states -----------------------------------
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+position_joint_trajectory_controller:
+  type: position_controllers/JointTrajectoryController
+  constraints:
+    goal_time: 1.0
+    joint_1_s:
+      goal: 0.02
+      trajectory: 0.05
+    joint_2_l:
+      goal: 0.02
+      trajectory: 0.05
+    joint_3_u:
+      goal: 0.02
+      trajectory: 0.05
+    joint_4_r:
+      goal: 0.02
+      trajectory: 0.05
+    joint_5_b:
+      goal: 0.02
+      trajectory: 0.05
+    joint_6_t:
+      goal: 0.02
+      trajectory: 0.05
+    stopped_velocity_tolerance: 0.02
+  joints:
+  - joint_1_s
+  - joint_2_l
+  - joint_3_u
+  - joint_4_r
+  - joint_5_b
+  - joint_6_t
+
+# Publish all joint states
+# Creates the /joint_states topic necessary in ROS
+# joint_state_controller:
+#   type: joint_state_controller/JointStateController
+#   publish_rate: 50
+# controller_list:
+#   - name: motoman_motomini_controller
+#     action_ns: joint_trajectory_action
+#     default: True
+#     type: FollowJointTrajectory
+#     joints:
+#       [joint_1_s, joint_2_l, joint_3_u, joint_4_r, joint_5_b, joint_6_t]
