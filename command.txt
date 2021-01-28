@@ -1,0 +1,5 @@
+<Gazeboで確認したい時 / Controlling virtual motomini>
+roslaunch motomini_moveit_config demo_gazebo.launch
+
+<実機を動かしたい時 / Controlling actual motomini>
+roslaunch motomini_moveit_config moveit_planning_execution.launch sim:=false robot?ip:=10.240.74.18 controller:=yrc1000
